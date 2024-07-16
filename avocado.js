@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="http://openweathermap.org/img/wn/${icon}.png" alt="天気アイコン" class="weather-icon">
                 <p>現在の気温: <span class="number">${currentTemp}</span>°C</p>
                 <p>平均気温: <span class="number">${avgTemp.toFixed(1)}</span>°C</p>
-                <p>降水確率: <span class="number">${precipitationProb}</span>%  風速: <span class="number">${windSpeed}</span> m/s</p>
+                <p>降水確率: <span class="number">${precipitationProb}</span>% </p> 
+                <p>風速: <span class="number">${windSpeed}</span> m/s</p>
             `;
                 temperatureDisplay.dataset.temp = avgTemp.toFixed(1); // 平均気温をデータ属性に保存
 
