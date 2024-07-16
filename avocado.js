@@ -94,25 +94,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (season === 'autumn') {
             if (avgTemp < 15) {
-                imgUrl = 'ニットカーデ.jpg';
+                imgUrl = 'images/ニットカーデ.jpg';
                 coordinateText = '季節の変わり目は油断禁物。温度調節できる格好がベスト！　<br>　<a href="https://zozo.jp/category/tops/cardigan/?p_gttagid=5493_21159&p_keyv=%83j%83b%83g+%8C%FA%8E%E8" target="_blank">#ニット</a>';
             } else if (avgTemp < 18) {
-                imgUrl = 'パーカ.jpg';
+                imgUrl = 'images/パーカ.jpg';
                 coordinateText = 'ファッションの秋！色や素材で楽しもう❤ベロア素材がおすすめ！ <br> <a href="https://zozo.jp/category/tops/parka/?p_gttagid=8539_1100124-8539_1100125-5493_21159" target="_blank">#パーカー</a> <a href="https://zozo.jp/shop/bonjoursagan/goods-sale/78872229/?did=128786295" target="_blank">#ベロア</a>';
             } else if (avgTemp < 20) {                   
                 imgUrl = '白ワンピ.jpg';
                 coordinateText = '一日を通して過ごしやすい気温！適度な肌みせで抜け感を！ブレスレットやネックレスを足しておしゃれしよう！　<br> <a href="https://zozo.jp/category/tops/shirt-blouse/?p_gttagid=5493_21160" target="_blank">#トップス</a> <a href="https://zozo.jp/category/tops/shirt-blouse/?p_gttagid=5493_21160" target="_blank">#アクセサリー</a>';
             } else {
-                imgUrl = '黒七分.jpg';
+                imgUrl = 'images/黒七分.jpg';
                 coordinateText = 'ハーフスリーブでもハリのある素材で秋感を出すのがおすすめ　<br> <a href="https://zozo.jp/search/?p_keyv=%83n%81%5B%83t%83X%83%8A%81%5B%83u" target="_blank">#ハーフスリーブ</a>';
     
             }
         } else if (season === 'winter') {
             if (avgTemp < 5 ) {
-                imgUrl = 'チェックコート.jpg';
+                imgUrl = 'images/チェックコート.jpg';
                 coordinateText = '足元、首元は念入りに防寒対策を！手袋・帽子もあるとなお良し！ <br> <a href="https://zozo.jp/category/fashion-accessories/gloves/?p_keyv=%93%7E" target="_blank">#手袋</a> <a href="https://zozo.jp/category/hat/knit-cap-beanies/" target="_blank">#ニット帽</a>';
             } else {
-                imgUrl = 'ボアフリース.jpg';
+                imgUrl = 'images/ボアフリース.jpg';
                 coordinateText = 'さわやかなインナーで春を先取り！まだまだ寒いので厚手アウターとマフラー必須 <br> <a href="https://zozo.jp/category/fashion-accessories/muffler/" target="_blank">#マフラー</a> <a href="https://zozo.jp/category/jacket-outerwear/?p_keyv=%8C%FA%8E%E8" target="_blank">#厚手アウター</a>';
             }
         }
