@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const temperatureDisplay = document.getElementById('temperatureDisplay');
 
@@ -30,12 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const windSpeed = dataCurrent.wind.speed;
                 const uvIndex = dataCurrent.uvi; // UVインデックスが含まれている場合
 
+              
                 temperatureDisplay.innerHTML = `
-                    <img src="http://openweathermap.org/img/wn/${icon}.png" alt="天気アイコン">
-                    <p>現在の気温: ${currentTemp}°C</p>
-                    <p>平均気温: ${avgTemp.toFixed(1)}°C</p>
-                    <p>降水確率: ${precipitationProb}% 風速: ${windSpeed} m/s</p>
-                `;
+                <img src="http://openweathermap.org/img/wn/${icon}.png" alt="天気アイコン" class="weather-icon">
+                <p>現在の気温: <span class="number">${currentTemp}</span>°C</p>
+                <p>平均気温: <span class="number">${avgTemp.toFixed(1)}</span>°C</p>
+                <p>降水確率: <span class="number">${precipitationProb}</span>%  風速: <span class="number">${windSpeed}</span> m/s</p>
+            `;
                 temperatureDisplay.dataset.temp = avgTemp.toFixed(1); // 平均気温をデータ属性に保存
 
                 // 日付から季節を判断
@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (season === 'summer') {
             if (avgTemp < 27) {
-                imgUrl = 'images/シア―.png';
-                coordinateText = 'サンダルデビュー！蒸し暑い時期、風通しの良い服を！<br> <a href="https://zozo.jp/search/?p_keyv=%83V%83A%81%5B%83V%83%83%83c+%92%B7%91%B3" target="_blank">#シアーシャツ</a>  <a href="https://zozo.jp/category/shoes/sandal/" target="_blank">#サンダル</a>';
+                imgUrl = 'images/シアー.png';
+                coordinateText = 'サンダルデビュー！<br>蒸し暑いので、風通しの良い服を！<br> <a href="https://zozo.jp/search/?p_keyv=%83V%83A%81%5B%83V%83%83%83c+%92%B7%91%B3" target="_blank">#シアーシャツ</a>  <a href="https://zozo.jp/category/shoes/sandal/" target="_blank">#サンダル</a>';
             } else if (avgTemp < 30) {
                 imgUrl = 'images/夏ワンピ.png';
                 coordinateText = '冷房対策で羽織を持っておくと便利！<br> <a href="https://zozo.jp/category/onepiece/onepiece-dress/?p_gttagid=5493_21161-5493_21158" target="_blank">#ワンピース</a> <a href="https://zozo.jp/search/?p_keyv=%89H%90D%82%E8+%94%96%8E%E8+%89%C4+%92%B7%91%B3" target="_blank">#薄手の羽織り</a>';
@@ -122,4 +122,3 @@ document.addEventListener('DOMContentLoaded', () => {
         coordinateImage.alt = coordinateText;
     }
 });
-
