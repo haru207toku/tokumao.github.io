@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (season === 'summer') {
             if (avgTemp < 27) {
-                imgUrl = 'images/シアー.png';
+                imgUrl = 'images/シア―.png';
                 coordinateText = 'サンダルデビュー！<br>蒸し暑いので、風通しの良い服を！<br> <a href="https://zozo.jp/search/?p_keyv=%83V%83A%81%5B%83V%83%83%83c+%92%B7%91%B3" target="_blank">#シアーシャツ</a>  <a href="https://zozo.jp/category/shoes/sandal/" target="_blank">#サンダル</a>';
             } else if (avgTemp < 30) {
                 imgUrl = 'images/夏ワンピ.png';
