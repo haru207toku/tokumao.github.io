@@ -1,9 +1,3 @@
-
-
-
-
-
-
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to bottom, #ffc0cb, #ff99cc);
@@ -38,19 +32,39 @@ body {
 
 h1 {
     font-size: 2.5em;
-    color: #fd3c9c;
+    color: #ff2d96;
     margin:0cap;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
     top: 10%; /* この値を調整してタイトルの位置を変更 */
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 5px rgba(210, 3, 113, 0.5);
 }
 
 #temperatureDisplay {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #f02375;
+    margin-bottom: 40px;
+    background: #fff0f5;
+    border: 3px solid #ff69b4;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.weather-icon {
+    width: 100px; /* アイコンの幅を大きく設定 */
+    height: 100px; /* アイコンの高さを大きく設定 */
+}
+
+.number {
+    font-size: 1.8em;
+    color: #ff1493;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.5);
 }
 
 #coordinateWrapper {
@@ -62,7 +76,7 @@ h1 {
 
 #coordinateInfo {
     font-size: 1em;
-    color: #666;
+    color: #853153;
     background: white;
     border-radius: 10px;
     padding: 10px;
@@ -88,16 +102,9 @@ h1 {
     margin-top: 10px
 }
 
-.glitter-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: url('images/Silver\ Glitter\ Hd\ Transparent\,\ Silver\ Glitter\ Texture\ Floats\ With\ Light\,\ Burst\,\ Element\,\ Border\ PNG\ Image\ For\ Free\ Download.jpg') no-repeat center center;
-    background-size: cover;
-    z-index: 0;
-}
+
+
+
 
 button:hover {
     background: #ff3385;
