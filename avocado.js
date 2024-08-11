@@ -2,22 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const temperatureDisplay = document.getElementById('temperatureDisplay');
 
     // ページがロードされたときに直接天気情報を取得
-    getLocation();
+    getWeather();
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(getWeather, showError);
-        } else {
-            temperatureDisplay.innerHTML = `<p>このブラウザは位置情報取得をサポートしていません。</p>`;
-        }
-    }
-
-    async function getWeather(position) {
+    async function getWeather() {
         const apiKey = '86808765a6e53f486acc76859059185d';
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        const urlCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=ja`;
-        const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=ja`;
+        const city = 'Tokyo';  // 必要に応じて都市名を変更してください
+        const urlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ja`;
+        const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=ja`;
 
         try {
             const [responseCurrent, responseForecast] = await Promise.all([
@@ -28,7 +19,42 @@ document.addEventListener('DOMContentLoaded', () => {
             const dataForecast = await responseForecast.json();
 
             if (dataCurrent.cod === 200 && dataForecast.cod === "200") {
-                // ここに表示処理
+                const currentTemp = dataCurrent.main.temp;
+                const tempMin = dataForecast.list[0].main.temp_min;
+                const tempMax = dataForecast.list[0].main.temp_max;
+                const avgTemp = (tempMin + tempMax) / 2;
+                const weather = dataCurrent.weather[0].description;
+                const icon = dataCurrent.weather[0].icon;
+                const precipitationProb = dataForecast.list[0].pop * 100;
+                const windSpeed = dataCurrent.wind.speed;
+                const uvIndex = dataCurrent.uvi; // UVインデックスが含まれている場合
+
+              
+                temperatureDisplay.innerHTML = `
+                <img src="http://openweathermap.org/img/wn/${icon}.png" alt="天気アイコン" class="weather-icon">
+                <p>現在の気温: <span class="number">${currentTemp}</span>°C</p>
+                <p>平均気温: <span class="number">${avgTemp.toFixed(1)}</span>°C</p>
+                <p>降水確率: <span class="number">${precipitationProb}</span>% </p> 
+                <p>風速: <span class="number">${windSpeed}</span> m/s</p>
+            `;
+                temperatureDisplay.dataset.temp = avgTemp.toFixed(1); // 平均気温をデータ属性に保存
+
+                // 日付から季節を判断
+                const currentDate = new Date();
+                const month = currentDate.getMonth() + 1;
+                let season = '';
+
+                if (month >= 3 && month <= 5) {
+                    season = 'spring';
+                } else if (month >= 6 && month <= 8) {
+                    season = 'summer';
+                } else if (month >= 9 && month <= 11) {
+                    season = 'autumn';
+                } else {
+                    season = 'winter';
+                }
+
+                showCoordinate(season, parseFloat(avgTemp));
             } else {
                 temperatureDisplay.innerHTML = `<p>天気情報を取得できませんでした: ${dataCurrent.message || dataForecast.message}</p>`;
             }
@@ -38,22 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function showError(error) {
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                temperatureDisplay.innerHTML = "<p>ユーザーが位置情報の取得を拒否しました。</p>";
-                break;
-            case error.POSITION_UNAVAILABLE:
-                temperatureDisplay.innerHTML = "<p>位置情報が利用できません。</p>";
-                break;
-            case error.TIMEOUT:
-                temperatureDisplay.innerHTML = "<p>位置情報の取得がタイムアウトしました。</p>";
-                break;
-            case error.UNKNOWN_ERROR:
-                temperatureDisplay.innerHTML = "<p>不明なエラーが発生しました。</p>";
-                break;
-        }
-    }
     function showCoordinate(season, avgTemp) {
         const coordinateInfo = document.getElementById('coordinateInfo');
         const coordinateImage = document.getElementById('coordinateImage');
