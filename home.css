@@ -24,6 +24,7 @@ h1 {
     color: #fe2792;
     margin-bottom: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px 5px rgba(210, 3, 113, 0.5);
 }
 
 button {
