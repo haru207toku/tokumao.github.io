@@ -23,11 +23,11 @@ body {
 .title-container {
     background: url('images/ribbon.png') no-repeat center center;
     background-size:cover;
-    height: 180px; /* リボン画像の高さに合わせて調整 */
+    height: 150px; /* リボン画像の高さに合わせて調整 */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: -40px;
+    margin-bottom: -30px;
 }
 
 h1 {
