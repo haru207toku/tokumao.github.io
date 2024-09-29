@@ -58,6 +58,7 @@ h1 {
 .weather-icon {
     width: 100px; /* アイコンの幅を大きく設定 */
     height: 100px; /* アイコンの高さを大きく設定 */
+    margin-bottom: -30px;
 }
 
 .number {
