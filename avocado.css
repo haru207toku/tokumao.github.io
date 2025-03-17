@@ -9,103 +9,33 @@ body {
     min-height: 100vh;
 }
 
-.coordinate-container {
+.home-container {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 80%;
-    max-width: 600px;
+    max-width: 500px;
     text-align: center;
-    z-index: 1;
-}
-
-.title-container {
-    background: url('images/ribbon.png') no-repeat center center;
-    background-size:cover;
-    height: 150px; /* リボン画像の高さに合わせて調整 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: -30px;
 }
 
 h1 {
-    font-size: 1.5em;
-    color: #ff2d96;
-    margin:0cap;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: absolute;
-    top: 10%; /* この値を調整してタイトルの位置を変更 */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 5px rgba(210, 3, 113, 0.5);
-}
-
-#temperatureDisplay {
-    font-size: 1.2em;
-    color: #f02375;
-    margin-bottom: 40px;
-    background: #fff0f5;
-    border: 3px solid #ff69b4;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-    font-weight: bold;
+    font-size: 2.5em;
+    color: #fe2792;
+    margin-bottom: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.weather-icon {
-    width: 100px; /* アイコンの幅を大きく設定 */
-    height: 100px; /* アイコンの高さを大きく設定 */
-    margin-bottom: -30px;
-}
-
-.number {
-    font-size: 1.5em;
-    color: #ff1493;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.5);
-}
-
-#coordinateWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position:relative;
-}
-
-#coordinateInfo {
+button {
+    background: #ff66b2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 1em;
-    color: #853153;
-    background: white;
-    border-radius: 10px;
-    padding: 10px;
-    margin-right: 20px;
-    position:relative;
-    width: 70%;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
-
-#coordinateInfo:after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 10px;
-    border-style: solid;
-    border-color: white transparent transparent transparent;
-}
-
-#coordinateImage {
-    width: 40%;
-    height: auto;
-    margin-top: 10px
-}
-
-
-
-
 
 button:hover {
     background: #ff3385;
